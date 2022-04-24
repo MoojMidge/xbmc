@@ -52,6 +52,7 @@ include(CMakeDependentOption)
 include(cmake/scripts/common/DependencyOptions.cmake)
 
 # general
+option(HEADERS_ONLY       "Skip building" OFF)
 option(VERBOSE            "Enable verbose output?" OFF)
 option(ENABLE_CLANGTIDY   "Enable clang-tidy support?" OFF)
 option(ENABLE_CPPCHECK    "Enable cppcheck support?" OFF)
@@ -112,6 +113,7 @@ endif()
 
 core_find_git_rev(APP_SCMID FULL)
 
+if(NOT HEADERS_ONLY)
 # Dynamically loaded libraries built with the project
 add_custom_target(${APP_NAME_LC}-libraries)
 set(LIBRARY_FILES "" CACHE STRING "" FORCE)
@@ -482,6 +484,7 @@ if(FFMPEG_LINK_EXECUTABLE)
 endif()
 if(FFMPEG_CREATE_SHARED_LIBRARY)
   set(CMAKE_CXX_CREATE_SHARED_LIBRARY "${FFMPEG_CREATE_SHARED_LIBRARY}")
+endif()
 endif()
 
 # Platform specific additional extra targets
