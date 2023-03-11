@@ -23640,3 +23640,15 @@ msgstr ""
 msgctxt "#39193"
 msgid "If music is being played, the screensaver will never be activated"
 msgstr ""
+
+#. Title of Dolby Vision RPU conversion setting
+#: system/settings/settings.xml
+msgctxt "#39194"
+msgid "Convert Dolby Vision for compatibility"
+msgstr ""
+
+#. Help text for setting "Convert Dolby Vision for compatibility" of label #39194
+#: system/settings/settings.xml
+msgctxt "#39195"
+msgid "Converts Dolby Vision profile 7 to profile 8.1, ignores enhancement layer"
+msgstr ""
