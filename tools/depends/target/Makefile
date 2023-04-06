@@ -79,10 +79,6 @@ ifeq ($(OS),android)
   DEPENDS += dummy-libxbmc libuuid
   PYMODULE_DEPS = dummy-libxbmc
   LIBUUID = libuuid
-
-  ifeq ($(ENABLE_LIBDOVI),yes)
-    DEPENDS += libdovi
-  endif
 endif
 
 ZLIB=
@@ -143,6 +139,10 @@ ifeq ($(OS),linux)
     DEPENDS += wayland waylandpp wayland-protocols webos-wayland-extensions webos-userland
     EXCLUDED_DEPENDS += dbus libcec linux-system-x11-libs pipewire mesa
   endif
+endif
+
+ifeq ($(ENABLE_LIBDOVI),yes)
+  DEPENDS += libdovi
 endif
 
 DEPENDS := $(filter-out $(EXCLUDED_DEPENDS),$(DEPENDS))
