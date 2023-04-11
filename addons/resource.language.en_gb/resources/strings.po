@@ -23660,5 +23660,35 @@ msgstr ""
 #. Help text for setting "Convert Dolby Vision for compatibility" of label #39194
 #: system/settings/settings.xml
 msgctxt "#39195"
-msgid "Converts Dolby Vision profile 7 to profile 8.1, ignores enhancement layer"
+msgid "Converts Dolby Vision profile 7 by chosen mode"
+msgstr ""
+
+#. Enum value for "Convert Dolby Vision for compatibility" of label #39194
+#: system/settings/settings.xml
+msgctxt "#39196"
+msgid "Lossless"
+msgstr ""
+
+#. Enum value for "Convert Dolby Vision for compatibility" of label #39194
+#: system/settings/settings.xml
+msgctxt "#39197"
+msgid "Minimal EL"
+msgstr ""
+
+#. Enum value for "Convert Dolby Vision for compatibility" of label #39194
+#: system/settings/settings.xml
+msgctxt "#39198"
+msgid "Profile 8.1"
+msgstr ""
+
+#. Enum value for "Convert Dolby Vision for compatibility" of label #39194
+#: system/settings/settings.xml
+msgctxt "#39199"
+msgid "Profile 8.4"
+msgstr ""
+
+#. Enum value for "Convert Dolby Vision for compatibility" of label #39194
+#: system/settings/settings.xml
+msgctxt "#39200"
+msgid "Profile 8.1 MP"
 msgstr ""
