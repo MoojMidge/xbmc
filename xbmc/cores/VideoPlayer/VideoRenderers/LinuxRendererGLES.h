@@ -84,8 +84,6 @@ public:
   bool Supports(ERENDERFEATURE feature) const override;
   bool Supports(ESCALINGMETHOD method) const override;
 
-  CRenderCapture* GetRenderCapture() override;
-
 protected:
   static const int FIELD_FULL{0};
   static const int FIELD_TOP{1};

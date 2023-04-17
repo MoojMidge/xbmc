@@ -9,7 +9,6 @@
 #include "WinRenderer.h"
 
 #include "RenderCapture.h"
-#include "RenderCaptureDX.h"
 #include "RenderFactory.h"
 #include "RenderFlags.h"
 #include "rendering/dx/RenderContext.h"
@@ -228,9 +227,7 @@ bool CWinRenderer::RenderCapture(CRenderCapture* capture)
   {
     const CRect destRect(0, 0, static_cast<float>(capture->GetWidth()), static_cast<float>(capture->GetHeight()));
 
-    auto cap = static_cast<CRenderCaptureDX*>(capture);
-
-    m_renderer->Render(cap->GetTarget(), m_sourceRect, destRect, GetScreenRect());
+    m_renderer->Render(capture->GetTarget(), m_sourceRect, destRect, GetScreenRect());
     capture->EndRender();
 
     return true;
@@ -345,9 +342,4 @@ DEBUG_INFO_VIDEO CWinRenderer::GetDebugInfo(int idx)
     return {};
 
   return m_renderer->GetDebugInfo(idx);
-}
-
-CRenderCapture* CWinRenderer::GetRenderCapture()
-{
-  return new CRenderCaptureDX;
 }
