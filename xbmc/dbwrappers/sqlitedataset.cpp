@@ -331,8 +331,13 @@ int SqliteDatabase::connect(bool create)
     {
       sqlite3_extended_result_codes(conn, 1);
       sqlite3_busy_handler(conn, busy_callback, NULL);
-      if (setErr(sqlite3_exec(getHandle(), "PRAGMA empty_result_callbacks=ON", NULL, NULL, NULL),
-                 "PRAGMA empty_result_callbacks=ON") != SQLITE_OK)
+      static constexpr const char * sqlcmd = "PRAGMA empty_result_callbacks=ON;"
+                                             "PRAGMA journal_mode=WAL;"
+                                             "PRAGMA synchronous=NORMAL;"
+                                             "PRAGMA temp_store=MEMORY;"
+                                             "PRAGMA mmap_size=268435456;";
+      if (setErr(sqlite3_exec(getHandle(), sqlcmd, NULL, NULL, NULL),
+                 sqlcmd) != SQLITE_OK)
       {
         throw DbErrors("%s", getErrorMsg());
       }
